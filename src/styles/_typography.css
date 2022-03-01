@@ -1,0 +1,61 @@
+@import url("./_media.css");
+/* typography */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.h1 {
+  font-size: var(--h1);
+  line-height: 48px;
+  letter-spacing: -0.015em;
+  @media (--sm) {
+    line-height: 64px;
+  }
+}
+
+.h2 {
+  font-size: var(--h2);
+  /* line-height: 64px; */
+  letter-spacing: -1.5%;
+}
+
+.h3 {
+  font-size: var(--h3);
+  line-height: 40px;
+  letter-spacing: -1.5%;
+  @media (--sm) {
+    line-height: 56px;
+    letter-spacing: -0.5%;
+  }
+}
+
+.button-text {
+  font-size: var(--body);
+  line-height: 0;
+  letter-spacing: 2.5%;
+  text-transform: uppercase;
+}
+
+.small {
+  font-size: var(--small);
+  font-weight: bold;
+  /* line-height: 26px; */
+  letter-spacing: 6.25%;
+}
+
+.link {
+  font-size: var(--link);
+  /* line-height: 26px; */
+  letter-spacing: 5.5%;
+}
+
+.h1,
+.h2,
+.h3 {
+  font-family: var(--ff-heading);
+}
+
+.text-center {
+  text-align: center;
+}

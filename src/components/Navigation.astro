@@ -1,0 +1,93 @@
+---
+const navArray = [
+  { id: 1, text: "how we work", btn: false },
+  { id: 2, text: "blog", btn: false },
+  { id: 3, text: "account", btn: false },
+  { id: 4, text: "view plans", btn: true },
+];
+---
+
+<!-- navbar -->
+<header id="header">
+  <nav class="container">
+    <div class="nav-header d-flex">
+      <a href="/">
+        <img class="logo" src="/assets/images/logo.svg" alt="home" />
+      </a>
+
+      <section class="navbar-mobile-icon">
+        <button
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="navigation"
+          ><span class="sr-only">Menu</span>
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            ><g fill="none" fill-rule="evenodd"
+              ><path
+                fill="#FFF"
+                stroke="#2C2830"
+                stroke-width="1.5"
+                d="M.75.75h30.5v30.5H.75z"></path><g fill="#2C2830"
+                ><path d="M8 10h16v1.5H8zM8 15h16v1.5H8zM8 20h16v1.5H8z"
+                ></path></g
+              ></g
+            ></svg
+          >
+        </button>
+      </section>
+    </div>
+    <ul class="nav-bar" tabindex="-1">
+      {navArray.map((nav) => {
+        return (
+          <li>
+            <a
+              href="#"
+              class={`${nav.btn ? "text-dark cta-btn uppercase" : "uppercase"}`}
+            >
+              {nav.text}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggler = document.querySelector(".menu-toggle");
+  const navBar = document.querySelector(".nav-bar");
+  const header = document.querySelector("header");
+  toggler.addEventListener("click", () => {
+    // Toggle class "opened". Set also aria-expanded to true or false.
+    if (-1 !== toggler.className.indexOf("opened")) {
+      toggler.className = toggler.className.replace(" opened", "");
+      toggler.setAttribute("aria-expanded", "false");
+
+      navBar.className = navBar.className.replace(" opened", "");
+      header.className = header.className.replace(" opened", "");
+    } else {
+      toggler.className += " opened";
+      navBar.className += " opened";
+      toggler.setAttribute("aria-expanded", "true");
+    }
+  });
+  // Check if responsive menu is open when resized and then remove
+  window.addEventListener("resize", () => {
+    if (
+      navBar.classList.contains("opened") &&
+      window.matchMedia("(min-width: 768px)").matches
+    ) {
+      toggler.className = toggler.className.replace(" opened", "");
+      toggler.setAttribute("aria-expanded", "false");
+      navBar.className = navBar.className.replace(" opened", "");
+    }
+  });
+</script>
+
+<style>
+  @import url("../styles/_media.css");
+</style>

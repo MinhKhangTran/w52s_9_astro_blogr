@@ -1,0 +1,22 @@
+/* colors */
+.bg-gradient-red {
+  background-color: var(--gradient-red);
+}
+.bg-gradient-blue {
+  background-color: var(--gradient-blue);
+}
+.bg-white {
+  background-color: var(--white);
+}
+.bg-very-dark-black-blue {
+  background-color: var(--very-dark-black-blue);
+}
+.text-white {
+  color: var(--white);
+}
+.text-very-dark-black-blue {
+  color: var(--very-dark-black-blue);
+}
+.text-very-dark-grayish-blue {
+  color: var(--very-dark-grayish-blue);
+}
