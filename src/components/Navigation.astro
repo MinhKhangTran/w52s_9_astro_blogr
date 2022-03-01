@@ -1,12 +1,3 @@
----
-const navArray = [
-  { id: 1, text: "how we work", btn: false },
-  { id: 2, text: "blog", btn: false },
-  { id: 3, text: "account", btn: false },
-  { id: 4, text: "view plans", btn: true },
-];
----
-
 <!-- navbar -->
 <header id="header">
   <nav class="container">
@@ -40,20 +31,88 @@ const navArray = [
         </button>
       </section>
     </div>
-    <ul class="nav-bar" tabindex="-1">
-      {navArray.map((nav) => {
-        return (
-          <li>
-            <a
-              href="#"
-              class={`${nav.btn ? "text-dark cta-btn uppercase" : "uppercase"}`}
+    <div class="nav_bar">
+      <ul class="nav_bar_left" tabindex="-1">
+        <li class="nav-parent">
+          <a href="#"
+            >Product <svg
+              width="10"
+              height="7"
+              viewBox="0 0 10 7"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              {nav.text}
-            </a>
-          </li>
-        );
-      })}
-    </ul>
+              <path
+                opacity="0.75"
+                d="M1 1L5 5L9 1"
+                stroke="white"
+                stroke-width="2"></path>
+            </svg>
+          </a>
+
+          <ul class="nav-child">
+            <li>Overview</li>
+            <li>Pricing</li>
+            <li>Marketplace</li>
+            <li>Features</li>
+            <li>Integrations</li>
+          </ul>
+        </li>
+        <li class="nav-parent">
+          <a href="#"
+            >Company <svg
+              width="10"
+              height="7"
+              viewBox="0 0 10 7"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.75"
+                d="M1 1L5 5L9 1"
+                stroke="white"
+                stroke-width="2"></path>
+            </svg>
+          </a>
+          <ul class="nav-child">
+            <li>About</li>
+            <li>Team</li>
+            <li>Blog</li>
+            <li>Careers</li>
+          </ul>
+        </li>
+        <li class="nav-parent">
+          <a href="#"
+            >Connect <svg
+              width="10"
+              height="7"
+              viewBox="0 0 10 7"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.75"
+                d="M1 1L5 5L9 1"
+                stroke="white"
+                stroke-width="2"></path>
+            </svg>
+          </a>
+          <ul class="nav-child">
+            <li>Contact</li>
+            <li>Newsletter</li>
+            <li>LinkedIn</li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav_bar_right" tabindex="-1">
+        <li>
+          <a href="#">Login</a>
+        </li>
+        <li>
+          <a class="btn" href="#">Sign Up</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </header>
 
@@ -61,6 +120,30 @@ const navArray = [
   const toggler = document.querySelector(".menu-toggle");
   const navBar = document.querySelector(".nav-bar");
   const header = document.querySelector("header");
+  const navParents = document.querySelectorAll(".nav-parent");
+  const navChildren = document.querySelectorAll(".nav-child");
+
+  navParents.forEach((navParent) => {
+    navParent.addEventListener("click", (e) => {
+      switch (e.target.textContent.trim()) {
+        case "Product":
+          console.log("product");
+          console.log(e.target.parentNode.querySelector(".nav-child"));
+          const navChild = e.target.parentNode.querySelector(".nav-child");
+          navChild.classList.add("show");
+          break;
+        case "Company":
+          console.log("Company");
+          break;
+        case "Connect":
+          console.log("Connect");
+          break;
+        default:
+          break;
+      }
+    });
+  });
+
   toggler.addEventListener("click", () => {
     // Toggle class "opened". Set also aria-expanded to true or false.
     if (-1 !== toggler.className.indexOf("opened")) {
@@ -90,4 +173,87 @@ const navArray = [
 
 <style>
   @import url("../styles/_media.css");
+  nav {
+    @media (--md) {
+      display: flex;
+      align-items: center;
+      padding-top: 4rem;
+    }
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  ul li {
+    position: relative;
+  }
+  ul ul {
+    display: none;
+    position: absolute;
+    animation: fadeIn 0.35s both ease-in;
+    top: 32px;
+    padding: 1.5rem;
+    left: -30%;
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  ul ul li {
+    padding-top: 0.5rem;
+  }
+  ul ul.show {
+    display: block;
+  }
+  a {
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.35s ease-in;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .nav-header {
+  }
+  .nav_bar {
+    @media (--md) {
+      flex: 1;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .nav_bar_left,
+  .nav_bar_right {
+    @media (--md) {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+  }
+  .nav_bar_left {
+    @media (--md) {
+      padding-left: 4rem;
+    }
+  }
+  .navbar-mobile-icon {
+    @media (--md) {
+      display: none;
+    }
+  }
+  .btn {
+    padding: 10px 40px;
+    background-color: var(--white);
+    border-radius: 90px;
+    display: inline-block;
+    color: #ce414a;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 </style>
