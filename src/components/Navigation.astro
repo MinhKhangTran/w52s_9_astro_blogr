@@ -13,21 +13,18 @@
           aria-controls="navigation"
           ><span class="sr-only">Menu</span>
           <svg
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
             width="32"
-            height="32"
-            ><g fill="none" fill-rule="evenodd"
-              ><path
-                fill="#FFF"
-                stroke="#2C2830"
-                stroke-width="1.5"
-                d="M.75.75h30.5v30.5H.75z"></path><g fill="#2C2830"
-                ><path d="M8 10h16v1.5H8zM8 15h16v1.5H8zM8 20h16v1.5H8z"
-                ></path></g
-              ></g
-            ></svg
+            height="18"
+            viewBox="0 0 32 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 0H32V2H0V0ZM0 8H32V10H0V8ZM0 16H32V18H0V16Z"
+              fill="white"></path>
+          </svg>
         </button>
       </section>
     </div>
@@ -37,19 +34,22 @@
           <button href="#" class="link-btn"
             >Product
             <span>
-              <svg
-                width="10"
-                height="7"
-                viewBox="0 0 10 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  opacity="0.75"
-                  d="M1 1L5 5L9 1"
-                  stroke="white"
-                  stroke-width="2"></path>
-              </svg>
+              <picture class="chevron">
+                <source
+                  media="(min-width: 67.5em)"
+                  srcset={`/assets/images/icon-arrow-light.svg`}
+                />
+                <source
+                  media="(max-width: 67.5em)"
+                  srcset={`/assets/images/icon-arrow-dark.svg`}
+                />
+                <img
+                  srcset={`/assets/images/icon-arrow-light.svg, /assets/images/icon-arrow-dark.svg`}
+                  sizes="(min-width: 67.5em), (max-width: 67.5em)"
+                  src={`/assets/images/icon-arrow-dark.svg`}
+                  alt={`Chevron`}
+                />
+              </picture>
             </span>
           </button>
 
@@ -64,19 +64,22 @@
         <li class="nav-parent">
           <button href="#" class="link-btn"
             >Company <span>
-              <svg
-                width="10"
-                height="7"
-                viewBox="0 0 10 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  opacity="0.75"
-                  d="M1 1L5 5L9 1"
-                  stroke="white"
-                  stroke-width="2"></path>
-              </svg>
+              <picture class="chevron">
+                <source
+                  media="(min-width: 67.5em)"
+                  srcset={`/assets/images/icon-arrow-light.svg`}
+                />
+                <source
+                  media="(max-width: 67.5em)"
+                  srcset={`/assets/images/icon-arrow-dark.svg`}
+                />
+                <img
+                  srcset={`/assets/images/icon-arrow-light.svg, /assets/images/icon-arrow-dark.svg`}
+                  sizes="(min-width: 67.5em), (max-width: 67.5em)"
+                  src={`/assets/images/icon-arrow-dark.svg`}
+                  alt={`Chevron`}
+                />
+              </picture>
             </span>
           </button>
           <ul class="nav-child">
@@ -89,19 +92,22 @@
         <li class="nav-parent">
           <button href="#" class="link-btn"
             >Connect <span>
-              <svg
-                width="10"
-                height="7"
-                viewBox="0 0 10 7"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  opacity="0.75"
-                  d="M1 1L5 5L9 1"
-                  stroke="white"
-                  stroke-width="2"></path>
-              </svg>
+              <picture class="chevron">
+                <source
+                  media="(min-width: 67.5em)"
+                  srcset={`/assets/images/icon-arrow-light.svg`}
+                />
+                <source
+                  media="(max-width: 67.5em)"
+                  srcset={`/assets/images/icon-arrow-dark.svg`}
+                />
+                <img
+                  srcset={`/assets/images/icon-arrow-light.svg, /assets/images/icon-arrow-dark.svg`}
+                  sizes="(min-width: 67.5em), (max-width: 67.5em)"
+                  src={`/assets/images/icon-arrow-dark.svg`}
+                  alt={`Chevron`}
+                />
+              </picture>
             </span>
           </button>
           <ul class="nav-child">
@@ -112,7 +118,7 @@
         </li>
       </ul>
       <ul class="nav_bar_right" tabindex="-1">
-        <li>
+        <li class="login">
           <a href="#">Login</a>
         </li>
         <li>
@@ -125,7 +131,7 @@
 
 <script>
   const toggler = document.querySelector(".menu-toggle");
-  const navBar = document.querySelector(".nav-bar");
+  const navBar = document.querySelector(".nav_bar");
   const header = document.querySelector("header");
   const hero = document.querySelector("#hero");
   const navParents = document.querySelectorAll(".nav-parent");
@@ -171,13 +177,30 @@
     if (-1 !== toggler.className.indexOf("opened")) {
       toggler.className = toggler.className.replace(" opened", "");
       toggler.setAttribute("aria-expanded", "false");
-
+      toggler.innerHTML = `
+       <svg
+            width="32"
+            height="18"
+            viewBox="0 0 32 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 0H32V2H0V0ZM0 8H32V10H0V8ZM0 16H32V18H0V16Z"
+              fill="white"></path>
+          </svg>
+      `;
       navBar.className = navBar.className.replace(" opened", "");
       header.className = header.className.replace(" opened", "");
     } else {
       toggler.className += " opened";
       navBar.className += " opened";
       toggler.setAttribute("aria-expanded", "true");
+      toggler.innerHTML = `
+      <svg width="26" height="26" xmlns="http://www.w3.org/2000/svg"><path d="M23.607.98l1.414 1.413L14.414 13l10.607 10.607-1.414 1.414L13 14.414 2.393 25.021.98 23.607 11.586 13 .98 2.393 2.393.98 13 11.586 23.607.98z" fill="#FFF" fill-rule="evenodd"/></svg>
+      `;
     }
   });
   // Check if responsive menu is open when resized and then remove
@@ -196,9 +219,11 @@
 <style>
   @import url("../styles/_media.css");
   nav {
+    padding-top: 3.5rem;
+    align-items: center;
+    position: relative;
     @media (--md) {
       display: flex;
-      align-items: center;
       padding-top: 4rem;
     }
   }
@@ -210,6 +235,9 @@
     position: relative;
   }
   ul ul {
+    height: 0;
+    overflow: hidden;
+    display: none;
     @media (--md) {
       display: none;
       position: absolute;
@@ -226,29 +254,72 @@
   ul ul li {
     padding-top: 0.5rem;
   }
-  button svg {
-    transition: all 0.35s ease-in;
-  }
-  button.show svg {
+
+  button.show .chevron {
     transform: rotate(180deg);
   }
   button.show + ul {
+    height: auto;
     display: block;
+    @media (--md) {
+      display: block;
+    }
   }
   /* ul ul.show {
     display: block;
   } */
   button {
+    color: var(--very-dark-grayish-blue);
     border: none;
     background-color: transparent;
-    color: var(--white);
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    gap: 0.35rem;
+
+    @media (--md) {
+      color: var(--white);
+      padding: 0;
+      transition: all 0.35s ease-in;
+    }
+  }
+  button span {
+    pointer-events: none;
+  }
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1rem;
+    @media (--md) {
+      padding-top: 0rem;
+    }
+  }
+  .nav-child {
+    background-color: hsl(240 7% 94%);
+    text-align: center;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    @media (--md) {
+      padding: 0;
+      width: auto;
+      text-align: left;
+    }
   }
   .nav-child a {
-    color: var(--very-dark-grayish-blue);
     cursor: pointer;
     transition: all 0.35s ease-in;
     text-decoration: none;
+    color: var(--very-dark-grayish-blue);
+    @media (--md) {
+      color: var(--very-dark-grayish-blue);
+    }
     &:hover,
     &:focus {
       color: var(--very-dark-black-blue);
@@ -257,7 +328,7 @@
   }
   a {
     text-decoration: none;
-    color: var(--white);
+
     transition: all 0.35s ease-in;
     &:hover,
     &:focus {
@@ -267,13 +338,29 @@
   .nav-header {
   }
   .nav_bar {
-    @media (--md) {
-      flex: 1;
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    border-radius: 8px;
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
+    @media (--md) {
+      box-shadow: none;
+      position: relative;
+      flex: 1;
+      width: auto;
+      margin-top: 0rem;
+      background-color: transparent;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+  }
+  .nav_bar.opened {
+    display: block;
   }
   .nav_bar_left,
   .nav_bar_right {
@@ -281,6 +368,37 @@
       display: flex;
       gap: 2rem;
       align-items: center;
+    }
+  }
+  .nav_bar_right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (--md) {
+      flex-direction: row;
+    }
+  }
+
+  .login {
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--grayis-blue);
+    width: 100%;
+    text-align: center;
+    @media (--md) {
+      width: auto;
+      color: white;
+
+      border: none;
+      padding-top: 0rem;
+      margin-top: 0rem;
+    }
+  }
+  .login a {
+    color: var(--very-dark-grayish-blue);
+    @media (--md) {
+      color: white;
     }
   }
   .nav_bar_left {
@@ -294,11 +412,21 @@
     }
   }
   .btn {
-    padding: 10px 40px;
-    background-color: var(--white);
+    background: var(--gradient-red);
     border-radius: 90px;
+    margin-top: 1rem;
+    padding: 8px 24px;
     display: inline-block;
-    color: #ce414a;
+    color: var(--white);
+    @media (--md) {
+      margin-top: 0rem;
+      padding: 10px 40px;
+      background: none;
+      background-color: var(--white);
+      border-radius: 90px;
+      display: inline-block;
+      color: #ce414a;
+    }
   }
   @keyframes fadeIn {
     0% {
