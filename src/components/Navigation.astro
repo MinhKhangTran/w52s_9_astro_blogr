@@ -226,6 +226,12 @@
   ul ul li {
     padding-top: 0.5rem;
   }
+  button svg {
+    transition: all 0.35s ease-in;
+  }
+  button.show svg {
+    transform: rotate(180deg);
+  }
   button.show + ul {
     display: block;
   }
