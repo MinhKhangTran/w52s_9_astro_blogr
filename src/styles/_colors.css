@@ -1,9 +1,9 @@
 /* colors */
 .bg-gradient-red {
-  background-color: var(--gradient-red);
+  background: var(--gradient-red);
 }
 .bg-gradient-blue {
-  background-color: var(--gradient-blue);
+  background: var(--gradient-blue);
 }
 .bg-white {
   background-color: var(--white);

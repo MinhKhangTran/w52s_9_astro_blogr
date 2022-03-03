@@ -1,0 +1,52 @@
+<section id="insel" aria-label="insel section">
+  <div class="container">
+    <div class="left-panel">
+      <img
+        src="/assets/images/illustration-phones.svg"
+        alt="illustration phones"
+      />
+    </div>
+    <div class="right-panel">
+      <h2 class="h2 text-white">State of the Art Infrastructure</h2>
+      <p class="text-white">
+        With reliability and speed in mind, worldwide data centers provide the
+        backbone for ultra-fast connectivity. This ensures your site will load
+        instantly, no matter where your readers are, keeping your site
+        competitive.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    margin-top: 16.875rem;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    background: url(/assets/images/bg-pattern-circles.svg), var(--gradient-blue);
+    background-position: -20% 80%;
+    background-repeat: no-repeat;
+    @media (-md) {
+      margin-top: 3.5rem;
+    }
+  }
+  .container {
+    position: relative;
+  }
+  .left-panel {
+    position: absolute;
+    width: 552px;
+    height: 579px;
+    top: -20%;
+    left: -5%;
+  }
+  .right-panel {
+    width: 50%;
+    margin-left: auto;
+    padding-block: 7rem;
+  }
+  p {
+    padding-top: 1rem;
+  }
+</style>
