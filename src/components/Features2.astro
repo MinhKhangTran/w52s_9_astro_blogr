@@ -1,0 +1,94 @@
+<section id="feature2" aria-label="feature 2 section">
+  <!-- reusable component starts here -->
+  <div class="wrapper container d-flex">
+    <div class="left-panel">
+      <h3 class="h3 first">Free, open, simple</h3>
+      <p>
+        Blogr is a free and open source application backed by a large community
+        of helpful developers. It supports features such as code syntax
+        highlighting, RSS feeds, social media integration, third-party
+        commenting tools, and works seamlessly with Google Analytics. The
+        architecture is clean and is relatively easy to learn.
+      </p>
+      <h3 class="h3 second">Powerful tooling</h3>
+      <p>
+        Batteries included. We built a simple and straightforward CLI tool that
+        makes customization and deployment a breeze, but capable of producing
+        even the most complicated sites.
+      </p>
+    </div>
+    <div class="right-panel">
+      <picture class="laptop">
+        <source
+          media="(min-width: 67.5em)"
+          srcset={`/assets/images/illustration-laptop-desktop.svg`}
+        />
+        <source
+          media="(max-width: 67.5em)"
+          srcset={`/assets/images/illustration-laptop-mobile.svg`}
+        />
+        <img
+          srcset={`/assets/images/illustration-laptop-desktop.svg, /assets/images/illustration-laptop-mobile.svg`}
+          sizes="(min-width: 67.5em), (max-width: 67.5em)"
+          src={`/assets/images/illustration-laptop-mobile.svg`}
+          alt={`Laptop illustration`}
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import url("../styles/_media.css");
+  section {
+    padding-top: 6.375rem;
+
+    @media (--md) {
+      padding-top: 9.75rem;
+    }
+  }
+  .wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    @media (--md) {
+      position: relative;
+      padding-top: 6.375rem;
+      align-items: normal;
+    }
+  }
+  .left-panel {
+    text-align: center;
+    @media (--md) {
+      width: 50%;
+      text-align: left;
+      margin-left: auto;
+    }
+  }
+  .right-panel {
+    width: 498px;
+    height: 359px;
+    padding-top: 2.75rem;
+    @media (--md) {
+      position: absolute;
+      top: -10%;
+      right: 60%;
+      width: 888.5px;
+      height: 785px;
+    }
+  }
+  p {
+    padding-top: 1rem;
+    @media (--md) {
+      padding-top: 1.5rem;
+    }
+  }
+  .first {
+    padding-top: 3.125rem;
+  }
+  .second {
+    padding-top: 2.8125rem;
+    @media (--md) {
+      padding-top: 4.875rem;
+    }
+  }
+</style>
