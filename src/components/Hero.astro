@@ -4,13 +4,82 @@ import Navigation from "../components/Navigation.astro";
 
 <section id="hero" aria-label="hero section">
   <Navigation />
-  <main id="main-content">Held</main>
+  <main id="main-content">
+    <h1 class="h1 text-white text-center">A modern publishing platform</h1>
+    <p class="subtitle text-white text-center">
+      Grow your audience and build your online brand
+    </p>
+    <div class="button_wrapper d-flex">
+      <button class="btn">Start For Free</button>
+      <button class="btn outline">Learn More</button>
+    </div>
+  </main>
 </section>
 
 <style>
   @import url("../styles/_media.css");
   #hero {
-    background: var(--gradient-red);
     border-radius: 0px 0px 0px 100px;
+    background: url(/assets/images/bg-pattern-intro-mobile.svg),
+      var(--gradient-red);
+    background-repeat: no-repeat;
+    background-position: 35% 37%;
+    @media (--md) {
+      background: url(/assets/images/bg-pattern-intro-desktop.svg),
+        var(--gradient-red);
+      background-position: 23% 53%;
+    }
+  }
+  h1 {
+    padding-top: 7rem;
+
+    @media (--md) {
+      padding-top: 7.75rem;
+    }
+  }
+  .subtitle {
+    font-family: Overpass;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22.79px;
+    letter-spacing: -0.75%;
+    padding-block: 1rem 2.875rem;
+    @media (--md) {
+      font-size: 1.25rem;
+      line-height: 25.32px;
+      padding-block: 2.25rem 3rem;
+    }
+  }
+  .button_wrapper {
+    justify-content: center;
+    padding-bottom: 9.75rem;
+  }
+  .btn {
+    padding-inline: 1rem;
+    padding-block: 0.625rem;
+    border: none;
+    border-radius: 90px;
+    background-color: var(--white);
+    color: var(--light-red);
+    cursor: pointer;
+    transition: all 0.35s ease-in;
+    &:hover {
+      color: var(--white);
+      text-decoration: none;
+      background-color: hsl(0 0% 100% / 0.5);
+    }
+  }
+  .outline {
+    padding-inline: 1.5rem;
+    padding-block: 0.625rem;
+    border: 1px solid var(--white);
+    background-color: transparent;
+    color: var(--white);
+    transition: all 0.35s ease-in;
+    &:hover {
+      text-decoration: none;
+      color: var(--light-red);
+      background-color: hsl(0 0% 100%);
+    }
   }
 </style>
