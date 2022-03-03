@@ -17,17 +17,21 @@
 
 .h2 {
   font-size: var(--h2);
-  /* line-height: 64px; */
-  letter-spacing: -1.5%;
+  font-weight: 500;
+  line-height: 35.45px;
+  letter-spacing: -2.4%;
+  @media (--sm) {
+    line-height: 50.64px;
+  }
 }
 
 .h3 {
   font-size: var(--h3);
-  line-height: 40px;
-  letter-spacing: -1.5%;
+  line-height: 30.8px;
+  letter-spacing: -0.4%;
   @media (--sm) {
-    line-height: 56px;
-    letter-spacing: -0.5%;
+    line-height: 35.45px;
+    letter-spacing: 0.6%;
   }
 }
 
