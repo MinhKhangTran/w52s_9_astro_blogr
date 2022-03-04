@@ -44,7 +44,7 @@
   @import url("../styles/_media.css");
   section {
     padding-top: 6.375rem;
-
+    overflow: hidden;
     @media (--md) {
       padding-top: 9.75rem;
     }
@@ -66,8 +66,8 @@
     }
   }
   .right-panel {
-    width: 406px;
-    height: 331px;
+    width: calc(375px - 0px);
+    height: auto;
     padding-top: 2.75rem;
     @media (--md) {
       position: absolute;

@@ -25,26 +25,38 @@
     border-top-right-radius: 100px;
     border-bottom-left-radius: 100px;
     background: url(/assets/images/bg-pattern-circles.svg), var(--gradient-blue);
-    background-position: -20% 80%;
+    background-position: 50% -80%;
+    background-size: 100% auto;
     background-repeat: no-repeat;
-    @media (-md) {
-      margin-top: 3.5rem;
+    @media (--md) {
+      background-position: -20% 80%;
+      background-size: auto auto;
+      margin-top: 16.125rem;
     }
   }
   .container {
     position: relative;
   }
   .left-panel {
+    width: calc(375px - 48px);
+    height: auto;
     position: absolute;
-    width: 552px;
-    height: 579px;
-    top: -20%;
-    left: -5%;
+    top: -27%;
+    @media (--md) {
+      width: 552px;
+      height: 579px;
+      top: -20%;
+      left: -5%;
+    }
   }
   .right-panel {
-    width: 50%;
-    margin-left: auto;
-    padding-block: 7rem;
+    padding-block: 14rem 7rem;
+    text-align: center;
+    @media (--md) {
+      width: 50%;
+      margin-left: auto;
+      padding-block: 7rem;
+    }
   }
   p {
     padding-top: 1rem;

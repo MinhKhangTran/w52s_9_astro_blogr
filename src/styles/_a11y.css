@@ -24,8 +24,8 @@
 }
 
 .skip-to-content {
-  background: var(--very-light-gray);
-  color: var(--dark-violet);
+  background: var(--white);
+  color: var(--light-red);
   padding: 0.5em 1em;
   margin-inline: auto;
   transform: translateY(-120%);

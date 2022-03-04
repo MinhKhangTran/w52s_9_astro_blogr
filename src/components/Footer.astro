@@ -1,11 +1,108 @@
-<footer>Footer</footer>
+<footer class="bg-very-dark-black-blue">
+  <div class="container">
+    <div class="wrapper">
+      <a href="/">
+        <img class="logo" src="/assets/images/logo.svg" alt="home" />
+      </a>
+    </div>
+
+    <div class="wrapper">
+      <h2>Product</h2>
+      <ul>
+        <li>Overview</li>
+        <li>Pricing</li>
+        <li>Marketplace</li>
+        <li>Features</li>
+        <li>Integrations</li>
+      </ul>
+    </div>
+    <div class="wrapper">
+      <h2>Company</h2>
+      <ul>
+        <li>About</li>
+        <li>Team</li>
+        <li>Blog</li>
+        <li>Careers</li>
+      </ul>
+    </div>
+    <div class="wrapper">
+      <h2>Connect</h2>
+      <ul>
+        <li>Contact</li>
+        <li>Newsletter</li>
+        <li>LinkedIn</li>
+      </ul>
+    </div>
+  </div>
+</footer>
 
 <style>
   @import url("../styles/_media.css");
   footer {
     margin-top: 6rem;
+    padding-bottom: 2.1875rem;
+    border-top-right-radius: 100px;
     @media (--md) {
-      margin-top: 7.75rem;
+      margin-top: 19rem;
+      padding-bottom: 2rem;
+    }
+  }
+  .container {
+    padding-top: 4.6875rem;
+    @media (--md) {
+      padding-top: 4.375rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .wrapper {
+    @media (--md) {
+      width: 100%;
+    }
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    @media (--md) {
+      display: inline;
+    }
+    img {
+      padding-bottom: 4.5rem;
+      @media (--md) {
+        padding-bottom: 0;
+      }
+    }
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 2.5625rem;
+  }
+  h2 {
+    color: var(--white);
+    font-size: 1.125rem;
+    line-height: 175%;
+    font-weight: 500;
+    letter-spacing: -0.0175em;
+    text-align: center;
+    padding-bottom: 1.375rem;
+    @media (--md) {
+      font-size: 1rem;
+      letter-spacing: -0.025em;
+      padding-bottom: 1.625rem;
+      text-align: left;
+    }
+  }
+  li {
+    color: var(--white);
+    font-size: 1.125rem;
+    line-height: 175%;
+    text-align: center;
+
+    letter-spacing: -0.025em;
+    @media (--md) {
+      font-size: 1rem;
+      text-align: left;
     }
   }
 </style>
